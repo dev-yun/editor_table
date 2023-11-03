@@ -1,15 +1,13 @@
-import {
-  ProseMirror,
-  useEditorEventCallback,
-} from "@nytimes/react-prosemirror";
 import React, { useState } from "react";
 
 import { EditorState } from "prosemirror-state";
+import { ProseMirror } from "@/components/ProseMirror";
 import { createTables } from "./table/command";
 import schema from "./schema";
 import setupPlugins from "./plugins";
 import { styled } from "styled-components";
 import { toggleMark } from "prosemirror-commands";
+import { useEditorEventCallback } from "@/hooks/useEditorEventCallback";
 
 function BoldButton() {
   const onClick = useEditorEventCallback((view, e) => {
